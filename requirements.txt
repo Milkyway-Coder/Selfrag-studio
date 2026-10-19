@@ -1,0 +1,18 @@
+flask>=3.0
+python-dotenv
+groq
+sentence-transformers
+chromadb
+pymupdf
+sqlalchemy>=2.0
+numpy
+pandas
+openpyxl
+python-docx
+python-pptx
+Pillow
+requests
+beautifulsoup4
+reportlab
+# optional
+pytesseract   # OCR for scanned PDFs (also install the Tesseract binary)

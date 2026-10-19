@@ -1,0 +1,35 @@
+# ── Secrets: NEVER commit these ─────────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Python ──────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+
+# ── Data the app creates while running (large, personal, regenerable) ──
+chroma_store/
+self_rag.db
+page_index.db
+*.db
+*.sqlite3
+benchmark_runs.json
+figures/
+data_store/
+uploads/
+results/
+
+# ── Editors, OS, logs ───────────────────────────────────────
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

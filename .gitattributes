@@ -1,0 +1,9 @@
+# Keep line endings consistent between Windows and Linux (CI runs on Linux)
+* text=auto
+*.py   text eol=lf
+*.js   text eol=lf
+*.css  text eol=lf
+*.html text eol=lf
+*.md   text eol=lf
+*.png  binary
+*.pdf  binary

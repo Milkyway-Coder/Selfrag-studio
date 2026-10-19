@@ -1,0 +1,30 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      # The tests use tests/stubs for the embedding model and the LLM, so no API key or model download is needed.
+      - name: Install dependencies
+        run: |
+          pip install flask python-dotenv numpy chromadb sqlalchemy pymupdf reportlab requests beautifulsoup4 \
+                      pandas openpyxl python-docx python-pptx pillow matplotlib
+      - name: Run tests
+        env:
+          GROQ_API_KEY: ci-placeholder
+        run: |
+          python tests/test_research.py
+          python tests/test_app.py
+          python tests/test_multimodal.py
+          python tests/test_routes_multimodal.py
+          python tests/test_vision.py
